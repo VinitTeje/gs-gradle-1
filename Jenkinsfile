@@ -29,7 +29,7 @@ pipeline {
 	post {
 		changed {
 			script {
-				slackSend(
+				office365ConnectorSend(
 						color: (currentBuild.currentResult == 'SUCCESS') ? 'good' : 'danger',
 						channel: '#sagan-content',
 						message: "${currentBuild.fullDisplayName} - `${currentBuild.currentResult}`\n${env.BUILD_URL}")
